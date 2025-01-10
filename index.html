@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+        content="Endo-HDR: Dynamic Endoscopic Reconstruction with Deformable 3D Gaussians and Hierarchical Depth Regularization.">
+  <meta name="keywords" content="SurgicalGaussian, 3D Reconstruction, 3D Gaussian">
+  <title>Endo-HDR: Dynamic Endoscopic Reconstruction with Deformable 3D Gaussians and Hierarchical Depth Regularization.</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <link rel="stylesheet" href="./static/css/ppage.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-2 publication-title">Endo-HDR: Dynamic Endoscopic Reconstruction with Deformable 3D Gaussians and Hierarchical Depth Regularization</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              Weixing Xie<sup>1</sup>,
+            </span>
+            <span class="author-block">
+              Junfeng Yao<sup>1,*</sup>,
+            </span>
+            <span class="author-block">
+              Shaoqi Wu<sup>1</sup>,
+            </span>
+            <span class="author-block">
+              Rongzhou Zhou<sup>1</sup>,
+            </span>
+            <span class="author-block">
+              Qingqi Hong<sup>1</sup>,
+            </span><br>
+            <span class="author-block">
+              Xiao Dong<sup>2,*</sup>,
+            </span>
+            <span class="author-block">
+              Xiaohu Guo<sup>3</sup>
+            <span>
+          </div>
+              
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Xiamen University</span><br>
+            <span class="author-block"><sup>2</sup>BNU-HKBU United International College</span><br>
+            <span class="author-block"><sup>3</sup>The University of Texas at Dallas</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://endo-hdr.github.io/"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://endo-hdr.github.io/"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://endo-hdr.io/"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code (coming soon)</span>
+                  </a>
+              </span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+<div class="container">
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img src="./static/images/method.png" alt="method" height="100%">
+      <h2 class="subtitle has-text-centered">
+        <span class="dnerf"> Framework of our Endo-HDR.
+      </h2>
+    </div>
+  </div>
+ </div>
+</section>
+
+<!-- 视频滚动 -->
+<section class="section">
+ <div class="container is-max-desktop">
+ 
+
+  <br>
+  <div id="video-container" style="height: 320px;">
+    <video id="video-player" autoplay muted playsinline controls>
+      <source src=" " type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <button id="prev"></button>
+    <button id="next"></button>
+  </div>
+  <div id="dots-container"></div>
+  <br>
+  </div>
+
+<script src="./static/js/ours-gt.js"></script>
+</section>
+<!-- 视频滚动 -->              
+              
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Reconstructing endoscopic videos is crucial due to its potential for robot-assisted surgery and intelligent medical. However, existing methods focus on fast reconstruction, and the reliance on low-rank deformation fields and globally aligned depth supervision often results in suboptimal appearance and noisy depth, leading to fused point clouds suffering from texture blur and surface distortion.
+To address these issues, we propose Endo-HDR, a framework for high-quality dynamic surgical video reconstruction based on 3D Gaussian splatting (3DGS) technology.
+Specifically, the surgical scene is decoupled into a canonical space based on 3DGS representation and a deformation module. We leverage 3DGS to capture the detailed texture of the tissue, and introduce an MLP-based deformation module with consistency constraint to model complex high-rank tissue motion.
+Additionally, since discrete Gaussians are sensitive to small errors, we employ hierarchical depth regularization to learn depth information at both window-level and image-level from sub-regions, enabling the model to reconstruct sharp and accurate depth.
+To further enhance Endo-HDR's performance, we introduce an efficient Gaussian initialization strategy to generate dense geometric priors in scene initialization phase. We also design a Gaussian growth control strategy to limit the number of Gaussians, ensuring the model’s real-time rendering capability.
+Experimental results on the EndoNeRF, StereoMIS and Hamlyn datasets demonstrate that Endo-HDR outperforms existing methods in both realistic rendering and accurate depth reconstruction.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+  </div>
+</section>
+
+<!-- 视频滚动 -->
+<section class="section">
+ <div class="container is-max-desktop">
+ <h3 class="title is-4">Comparison Experiments</h3>
+        <div class="content has-text-justified">
+          <p>
+           Compare the reconstruction quality between our Endo-HDR, EndoNeRF and Forplane on the pulling scene from EndoNeRF dataset and seq_3 scene from Hamlyn dataset:
+          </p>
+        </div>
+  <div class="articlecontrainer">
+  <br>
+  <div id="video-container" style="height: 450px; width: 80%">
+    <video id="video-player-2" autoplay muted playsinline controls>
+      <source src=" " type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <button id="prev-button-2"></button>
+    <button id="next-button-2"></button>
+  </div>
+  <div id="dots-container-2"></div>
+  <br>
+  </div>
+<script src="./static/js/ppage.js"></script>
+ </div>
+</section>
+<!-- 视频滚动 -->
+
+
+<!-- 视频滚动 -->
+<section class="section">
+ <div class="container is-max-desktop">
+        <div class="content has-text-justified">
+          <p>
+           Compare the reconstruction quality between our Endo-HDR, Deform3DGS, Endo-4DGS and SurgicalGaussian on the pulling scene from EndoNeRF dataset and seq_3 scene from Hamlyn dataset:
+          </p>
+        </div>
+  <div class="articlecontrainer">
+  <br>
+  <div id="video-container" style="height: 450px; width: 100%">
+    <video id="video-player-3" autoplay muted playsinline controls>
+      <source src=" " type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <button id="prev-button-3"></button>
+    <button id="next-button-3"></button>
+  </div>
+  <div id="dots-container-3"></div>
+  <br>
+  </div>
+<script src="./static/js/3dgs.js"></script>
+ </div>
+</section>
+<!-- 视频滚动 -->
+
+
+
+<!-- 视频滚动 -->
+<section class="section">
+ <div class="container is-max-desktop">
+ 
+        <div class="content has-text-justified">
+          <p>
+           Compare the point clouds quality between our Endo-HDR, Deform3DGS, Endo-4DGS and EndoNeRF on the pulling scene from EndoNeRF dataset and intestine scene from StereoMIS dataset:
+          </p>
+        </div>
+  <div class="articlecontrainer">
+  <br>
+  <div id="video-container" style="height: 450px; width: 80%">
+    <video id="video-player-4" autoplay muted playsinline controls>
+      <source src=" " type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <button id="prev-button-4"></button>
+    <button id="next-button-4"></button>
+  </div>
+  <div id="dots-container-4"></div>
+  <br>
+  </div>
+<script src="./static/js/point.js"></script>
+ </div>
+</section>
+<!-- 视频滚动 -->
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+        
+   <!-- Comparison Experiments -->
+   <!-- 
+        <h3 class="title is-4">Comparison Experiments</h3>
+        <div class="content has-text-justified">
+          <p>
+           Comparison with EndoNeRF, EndoSurf, LerPlane and EndoGaussian:
+          </p>
+        </div>
+          
+        
+        <div class="content has-text-centered">
+          <video id="replay-video"
+                 controls
+                 muted
+                 preload
+                 playsinline
+                 width="90%">
+            <source src="./static/video/pulling.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+
+        <div class="content has-text-centered">
+          <video id="replay-video"
+                 controls
+                 muted
+                 preload
+                 playsinline
+                 width="90%">
+            <source src="./static/video/cutting.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+
+        <div class="content has-text-centered">
+          <video id="replay-video"
+                 controls
+                 muted
+                 preload
+                 playsinline
+                 width="90%">
+            <source src="./static/video/intestine.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+
+        <div class="content has-text-centered">
+          <video id="replay-video"
+                 controls
+                 muted
+                 preload
+                 playsinline
+                 width="90%">
+            <source src="./static/video/live.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+
+         -->
+    
+    <!-- Concurrent Work. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Related Links</h2>
+
+        <div class="content has-text-justified">
+          <p>
+            <a href="https://med-air.github.io/EndoNeRF">EndoNeRF</a>: Neural Rendering for Stereo 3D Reconstruction of Deformable Tissues in Robotic Surgery.
+          <p>
+          <p>
+            <a href="https://github.com/Loping151/ForPlane">Forplane</a>: Efficient Deformable Tissue Reconstruction via Orthogonal Neural Plane.
+          <p>
+          <p>
+            <a href="https://github.com/jinlab-imvr/Deform3DGS">Deform3DGS</a>: Deform3DGS: Flexible Deformation for Fast Surgical Scene Reconstruction with Gaussian Splatting.
+          <p>
+          <p>
+            <a href="https://github.com/lastbasket/Endo-4DGS">Endo-4DGS</a>: Endo-4DGS: Endoscopic Monocular Scene Reconstruction with 4D Gaussian Splatting.
+          <p>
+          <p>
+            <a href="https://surgicalgaussian.github.io">SurgicalGaussian</a>: SurgicalGaussian: Deformable 3D Gaussians for High-Fidelity Surgical Scene Reconstruction.
+          <p>
+          <p>
+            Three datasets: <a href="https://med-air.github.io/EndoNeRF">EndoNeRF dataset</a>, <a href="https://zenodo.org/records/7727692">StereoMIS dataset</a> and <a href="https://davidrecasens.github.io/EndoDepthAndMotion/#download-dataset">Hamlyn dataset</a>.
+          <p>
+        </div>
+      </div>
+    </div>
+    <!--/ Concurrent Work. -->
+              
+  </div>
+</section>
+              
+
+              
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <p>If you find this work helpful, you can cite our paper as follows:</p>
+    <pre><code>@article{xie2025endo-hdr,
+  author    = {Xie, Weixing and Yao, Junfeng and Wu, Shaoqi and Zhou, Rongzhou and Hong, Qingqi and Dong, Xiao and Guo, Xiaohu},
+  title     = {Endo-HDR: Dynamic Endoscopic Reconstruction with Deformable 3D Gaussians and Hierarchical Depth Regularization},
+  journal   = {arxiv},
+  year      = {2025},
+}</code></pre>
+  </div>
+</section>
+              
+<section class="section" id="Contact">
+  <hr>
+  <div class="container is-max-desktop content">
+    <p>If you have any questions or feedbacks, please contact Weixing Xie (<a href="mailto:xwxxmu@gmail.com">xwxxmu@gmail.com</a>).</p>
+  </div>
+</section>
+              
+<footer class="footer">
+  <div class="container">
+
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            This website is partially borrowed from <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+              
+
+
+</body>
+</html>
